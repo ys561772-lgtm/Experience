@@ -11,16 +11,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Unzip
-        run: sudo apt-get install -y unzip
-
-      - name: Unzip project
-        run: |
-          unzip admob-experience.zip -d extracted_game
-
       - name: Build Godot Android
         uses: abarrak/godot-ci@main
         with:
           name: my_game
-          project: extracted_game
           android: true
