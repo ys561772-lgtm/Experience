@@ -15,4 +15,5 @@ jobs:
         uses: abarrak/godot-ci@main
         with:
           name: my_game
+          # هنا نقول للسيرفر أن يبحث عن الملفات في المجلد الرئيسي
           android: true
