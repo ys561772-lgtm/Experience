@@ -1,0 +1,23 @@
+name: Build Godot Android Game
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Unzip project
+        run: |
+          unzip admob-experience.zip -d extracted_game
+
+      - name: Build Godot Android
+        uses: abarrak/godot-ci@main
+        with:
+          name: my_game
+          project: extracted_game
+          android: true
